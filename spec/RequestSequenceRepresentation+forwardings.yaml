@@ -1,23 +1,42 @@
 forwardings:
 
   - forwarding-name: PromptForRegisteringCausesRegistrationRequest
-    uuid: rsr-1-0-0-op-fc-bm-000
+    uuid: rsr-1-0-2-op-fc-bm-999
     forwarding-type: InvariantProcessSnippet
     management-requests:
       operation-client-update:
         - server-name: /v1/register-yourself
-          uuid: rsr-1-0-0-op-s-bm-000
+          uuid: rsr-1-0-2-op-s-bm-000
       fc-port-update:
         - server-name: /v1/register-yourself
-          uuid: rsr-1-0-0-op-s-bm-000
+          uuid: rsr-1-0-2-op-s-bm-000
       fc-port-deletion:
       operation-client-deletion:
     initiating-requests:
       - server-name: /v1/register-yourself
-        uuid: rsr-1-0-0-op-s-bm-000
+        uuid: rsr-1-0-2-op-s-bm-000
     consequent-requests:
-      - client-name: RegistryOffice://v1/register-application
-        uuid: rsr-1-0-0-op-c-bm-ro-2-0-1-000
+      - client-name: RegistryOffice://v2/register-application
+        uuid: rsr-1-0-2-op-c-bm-ro-2-1-2-000
+
+  - forwarding-name: PromptForRegisteringCausesRegistrationRequest2
+    uuid: rsr-1-0-2-op-fc-bm-000
+    forwarding-type: InvariantProcessSnippet
+    management-requests:
+      operation-client-update:
+        - server-name: /v1/register-yourself
+          uuid: rsr-1-0-2-op-s-bm-000
+      fc-port-update:
+        - server-name: /v1/register-yourself
+          uuid: rsr-1-0-2-op-s-bm-000
+      fc-port-deletion:
+      operation-client-deletion:
+    initiating-requests:
+      - server-name: /v1/register-yourself
+        uuid: rsr-1-0-2-op-s-bm-000
+    consequent-requests:
+      - client-name: RegistryOffice://v2/register-application
+        uuid: rsr-1-0-2-op-c-bm-ro-2-1-2-000
 
   - forwarding-name: ServiceRequestCausesLoggingRequest
     uuid: rsr-1-0-0-op-fc-bm-002
@@ -54,6 +73,14 @@ forwardings:
         uuid: rsr-1-0-0-op-s-bm-010
       - server-name: /v1/update-operation-client
         uuid: rsr-1-0-0-op-s-bm-011
+      - server-name: /v1/inquire-basic-auth-approvals
+        uuid: rsr-1-0-2-op-s-bm-012
+      - server-name: /v1/dispose-remainders-of-deregistered-application
+        uuid: rsr-1-0-2-op-s-bm-013
+      - server-name: /v1/inform-about-preceding-release
+        uuid: rsr-1-0-2-op-s-bm-014
+      - server-name: /v1/update-client-of-subsequent-release
+        uuid: rsr-1-0-2-op-s-bm-015
       - server-name: /v1/start-application-in-generic-representation
         uuid: rsr-1-0-0-op-s-bs-000
       - server-name: /v1/inform-about-application
@@ -103,7 +130,7 @@ forwardings:
       operation-client-deletion:
     initiating-requests:
     consequent-requests:
-      - client-name: AdministratorAdministration://v1/approve-oam-request
+      - client-name: AccessAdministration://v1/approve-oam-request
         uuid: rsr-1-0-0-op-c-bs-aa-2-0-1-000
 
   - forwarding-name: ServiceRequestCausesLtpUpdateRequest

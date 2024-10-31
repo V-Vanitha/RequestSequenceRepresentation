@@ -25,6 +25,14 @@ servers:
           uuid: rsr-1-0-0-op-s-bm-010
         - operation-name: /v1/update-operation-client
           uuid: rsr-1-0-0-op-s-bm-011
+        - operation-name: /v1/inquire-basic-auth-approvals
+          uuid: rsr-1-0-2-op-s-bm-012
+        - operation-name: /v1/dispose-remainders-of-deregistered-application
+          uuid: rsr-1-0-2-op-s-bm-013
+        - operation-name: /v1/inform-about-preceding-release
+          uuid: rsr-1-0-2-op-s-bm-014
+        - operation-name: /v1/update-client-of-subsequent-release
+          uuid: rsr-1-0-2-op-s-bm-015
       individual:
     service:
       basic:
@@ -48,7 +56,7 @@ servers:
 
   http-server:
     own-application-name: RequestSequenceRepresentation
-    own-release-number: 1.0.0
+    own-release-number: 1.0.2
     uuid: rsr-1-0-0-http-s-000
   tcp-server:
     - description: Without TLS layer
@@ -148,7 +156,7 @@ clients:
         individual:
 
   - http-client:
-      application-name: AdministratorAdministration
+      application-name: AccessAdministration
       release-number: 2.0.1
       uuid: rsr-1-0-0-http-c-aa-2-0-1-000
     tcp-client:
