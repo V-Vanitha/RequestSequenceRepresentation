@@ -133,6 +133,28 @@ forwardings:
       - client-name: AccessAdministration://v1/approve-oam-request
         uuid: rsr-1-0-0-op-c-bs-aa-2-0-1-000
 
+  - forwarding-name: BasicAuthRequestCausesInquiryForAuthentication
+    uuid: rsr-1-0-2-op-fc-bm-005
+    forwarding-type: InvariantProcessSnippet
+    management-requests:
+      operation-client-update:
+        - server-name: /v1/inquire-basic-auth-approvals
+          uuid: rsr-1-0-2-op-s-bm-012
+        - server-name: /v1/inquire-oam-request-approvals
+          uuid: rsr-1-0-2-op-s-bm-005
+      fc-port-update:
+        - server-name: /v1/inquire-basic-auth-approvals
+          uuid: rsr-1-0-2-op-s-bm-012
+        - server-name: /v1/inquire-oam-request-approvals
+          uuid: rsr-1-0-2-op-s-bm-005
+      fc-port-deletion:
+      operation-client-deletion:
+    initiating-requests:
+      # [all oam requests]
+    consequent-requests:
+      - client-name: AccessAdministration://v1/approve-basic-auth-request
+        uuid: rsr-1-0-2-op-c-bs-aa-2-1-2-000
+
   - forwarding-name: ServiceRequestCausesLtpUpdateRequest
     uuid: rsr-1-0-0-op-fc-bm-006
     forwarding-type: InvariantProcessSnippet
@@ -162,6 +184,10 @@ forwardings:
         uuid: rsr-1-0-0-op-s-bm-009
       - server-name: /v1/update-operation-client
         uuid: rsr-1-0-0-op-s-bm-011
+      - server-name: /v1/inquire-basic-auth-approvals
+        uuid: rsr-1-0-2-op-s-bm-012
+      - server-name: /v1/update-client-of-subsequent-release
+        uuid: rsr-1-0-2-op-s-bm-015
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/update-ltp
         uuid: rsr-1-0-0-op-c-bm-alt-2-0-1-001
@@ -179,6 +205,8 @@ forwardings:
       fc-port-deletion:
       operation-client-deletion:
     initiating-requests:
+      - server-name: /v1/dispose-remainders-of-deregistered-application
+        uuid: rsr-1-0-2-op-s-bm-013
     consequent-requests:
       - client-name: ApplicationLayerTopology://v1/delete-ltp-and-dependents
         uuid: rsr-1-0-0-op-c-bm-alt-2-0-1-002
