@@ -22,5 +22,12 @@ This application supports efficiently debugging the application layer.
 - [TestSuite](./testing/)
 - [Implementation](./server/)
 
+### Latest Update
+
+The v1.0.2 release adds the following specification changes:  
+- update the specification to use the new ApplicationPattern release 2.1.2
+
+There were no additions or changes to individual services or other bug fixes.  
+
 ### Comments
 ./.
