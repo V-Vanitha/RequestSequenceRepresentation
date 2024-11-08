@@ -186,6 +186,10 @@ forwardings:
         uuid: rsr-1-0-2-op-s-bm-011
       - server-name: /v1/inquire-basic-auth-approvals
         uuid: rsr-1-0-2-op-s-bm-012
+      - server-name: /v1/dispose-remainders-of-deregistered-application
+        uuid: rsr-1-0-2-op-s-bm-013
+      - server-name: /v1/inform-about-preceding-release
+        uuid: rsr-1-0-2-op-s-bm-014
       - server-name: /v1/update-client-of-subsequent-release
         uuid: rsr-1-0-2-op-s-bm-015
     consequent-requests:
