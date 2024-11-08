@@ -15,7 +15,7 @@ User needs to fill in username, password and x-correlator of the flow to be visu
 
 Clicking the Visualize Flow button shall make the client side GUI module to send a request to "RSR://v1/update-flow-visualization-page" at the server side  
 ![update-visualization-page](./diagrams/03x_visualize_flow.png)  
-After authenticating the requestor at AdministratorAdministration and retrieving the required data from ExecutionAndTraceLog, the server side is responding the data that is to be filled into the GUI, which is represented by the client side module.  
+After authenticating the requestor at AccessAdministration and retrieving the required data from ExecutionAndTraceLog, the server side is responding the data that is to be filled into the GUI, which is represented by the client side module.  
 ![visualized-flow](./pictures/visualized-flow.png)  
 
 .  
